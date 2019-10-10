@@ -8,7 +8,7 @@
 
 ### Usage
 
-The input (.csv) and config (.json) files must be in a directory which is mounted as a volume when the container is run.
+* The input (.csv) and config (.json) files must be in a directory which is mounted as a volume when the container is run.
 
 ```sh
 ➜ ls -1 lexmapr_files
