@@ -1,4 +1,4 @@
-FROM continuumio/miniconda
+FROM continuumio/miniconda3
 
 LABEL maintainer "Tom Wilson <tpw2@aber.ac.uk"
 
@@ -17,4 +17,3 @@ RUN pip install .
 
 RUN python -m nltk.downloader all
 
-RUN lexmapr
