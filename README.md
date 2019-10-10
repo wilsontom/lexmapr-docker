@@ -8,7 +8,7 @@
 
 ### Usage
 
-The input (.csv) and config (.json) files must be in a directory which is mounted as a volume when the container is run.
+* The input (.csv) and config (.json) files must be in a directory which is mounted as a volume when the container is run.
 
 ```sh
 ➜ ls -1 lexmapr_files
@@ -16,20 +16,20 @@ config.json
 input.csv
 ```
 
-Run the container and mount your local directory
+* Run the container and mount your local directory
 
 ```sh
 docker run -it --name lexmapr -v lexmapr_files:/lexmaprFiles wilsontom/lexmapr-docker /bin/bash
 ```
 
-Test that everything is working
+* Test that everything is working
 
 ```sh
 (base) root@ad08bf24819f:/LexMapr# > lexmapr --version
 lexmapr 0.5.0
 ```
 
-To run mappings
+* To run mappings
 
 ```sh
 lexmapr /lexmaprFiles/input.csv -c /lexmaprFiles/config.json -o /lexmaprFiles/output.tsv
