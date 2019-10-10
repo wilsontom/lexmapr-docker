@@ -19,7 +19,7 @@ input.csv
 Run the container and mount your local directory
 
 ```sh
-docker run -it -v lexmapr_files:/lexmaprFiles wilsontom/lexmapr-docker /bin/bash
+docker run -it --name lexmapr -v lexmapr_files:/lexmaprFiles wilsontom/lexmapr-docker /bin/bash
 ```
 
 Test that everything is working
