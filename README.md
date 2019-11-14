@@ -8,34 +8,21 @@
 
 ### Usage
 
-* The input (.csv) and config (.json) files must be in a directory which is mounted as a volume when the container is run.
+* The LexMapping can be run from the docker cotainer using a single line, providing the files are named **input.csv** and **config.json**.
+
+* Move these two files into a directory on the localhost which can be mounted to the docker container.
+
+* The container and lexmapr command are then executed together using;
 
 ```sh
-➜ ls -1 lexmapr_files
-config.json
-input.csv
+docker run --name lexmapr -v <LOCAL_DIR>:/data wilsontom/lexmapr-docker data/input.csv data/config.json data/output.tsv
 ```
 
-* Run the container and mount your local directory
+* This is will create an **output.tsv** file in the <LOCAL_DIR>
 
-```sh
-docker run -it --name lexmapr -v lexmapr_files:/lexmaprFiles wilsontom/lexmapr-docker /bin/bash
+`cat <LOCAL_DIR>/output.tsv`
+
 ```
-
-* Test that everything is working
-
-```sh
-(base) root@ad08bf24819f:/LexMapr# > lexmapr --version
-lexmapr 0.5.0
-```
-
-* To run mappings
-
-```sh
-lexmapr /lexmaprFiles/input.csv -c /lexmaprFiles/config.json -o /lexmaprFiles/output.tsv
-
-cat /lexmapFiles/output.tsv
-
 Sample_Id       Sample_Desc     Cleaned_Sample  Matched_Components
 small_simple1   Chicken Breast  chicken breast  ['breast:uberon_0000310']
 small_simple2   Baked Potato    baked potato    ['potato (whole, baked):foodon_03302196']
