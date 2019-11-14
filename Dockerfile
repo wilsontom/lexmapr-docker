@@ -17,3 +17,12 @@ RUN pip install .
 
 RUN python -m nltk.downloader all
 
+RUN mkdir /data
+
+COPY entrypoint.sh /entrypoint.sh
+
+RUN chmod +x /entrypoint.sh
+
+WORKDIR "/data"
+
+CMD ["/entrypoint.sh"]
