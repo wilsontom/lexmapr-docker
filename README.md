@@ -15,7 +15,7 @@
 * The container and lexmapr command are then executed together using;
 
 ```sh
-docker run --name lexmapr -v <LOCAL_DIR>:/data wilsontom/lexmapr-docker data/input.csv data/config.json data/output.tsv
+docker run --name lexmapr -v <LOCAL_DIR>:/data wilsontom/lexmapr-docker
 ```
 
 * This is will create an **output.tsv** file in the <LOCAL_DIR>
