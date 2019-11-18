@@ -30,3 +30,10 @@ small_simple3   Canned Corn     canned corn     ['corn (canned):foodon_03302665'
 small_simple4   Frozen Yogurt   frozen yogurt   ['frozen:pato_0001985']
 small_simple5   Apple Pie       apple pie       ['apple pie:foodon_00002475']
 ```
+
+Currently the options for running lexmapr are
+```sh
+-p ifsac --no-cache
+```
+These settings cab be easily changed by editing the `entrypoint.sh` script.
+
